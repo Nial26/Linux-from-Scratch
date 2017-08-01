@@ -1,8 +1,8 @@
 
 # Notes and Tips on Building Linux From Scratch
 
-###Table of Contents
-[TOC]
+### Table of Contents
+[To-Do]
 
 ### __General Tips__
 1. Don't panic, although the code for Linux Kernel as well as all the utilities were written by wizards, they were kind enough to provide us plebs with easy ways to install them.
@@ -14,7 +14,7 @@
 ### __1. Setting up the Host__
 
 1.  Check the Host system toolings satisfy the version requirements, by running the version-check.sh
-	* If `/bin/sh`  doesn't point to `/bin/bash` run                        
+  * If `/bin/sh`  doesn't point to `/bin/bash` run                        
               
 
 		    sudo rm /bin/sh                                         
@@ -38,7 +38,7 @@
 	* Format the partition using `mkfs` command
 4.  Mount the partition to appropriate directory after setting the `LFS` variable, by using the `mount` command (Make sure to mount it as an `ext4` filetype) 
 	* Some things about exporting LFS
-		* write `export LFS=/mnt/lfs` in both  `.bashrc` as well as `.bash_profile` (similarly in `/root` directory). The Reasoning behind this is that when bash is invoked as an interactive login shell bash read `.bash_profile` , but when it is invoked as a non-login shell it just reads `.bashrc` ([Or something like that..](http://stefaanlippens.net/bashrc_and_others/) and also [this](https://stackoverflow.com/questions/415403/whats-the-difference-between-bashrc-bash-profile-and-environment) seems to explain it in a much more broader scope)
+	  * write `export LFS=/mnt/lfs` in both  `.bashrc` as well as `.bash_profile` (similarly in `/root` directory). The Reasoning behind this is that when bash is invoked as an interactive login shell bash read `.bash_profile` , but when it is invoked as a non-login shell it just reads `.bashrc` ([Or something like that..](http://stefaanlippens.net/bashrc_and_others/) and also [this](https://stackoverflow.com/questions/415403/whats-the-difference-between-bashrc-bash-profile-and-environment) seems to explain it in a much more broader scope)
 
 ### __2. Downloading  Packages and Patches__
 
@@ -73,7 +73,7 @@
 		The rest of them all build under 5 minutes, taking a maximum time of under 2 hours
 
 * Interesting Stuff to Notice along the journey                    
-		* `ncurses` test suit is pretty fun to play around with
-	   * Apparently `bash` has it's own malloc function, which is known to cause seg faults, so you need to compile it with the option saying you need it to use Glibc `malloc` function
-	   * The way `bison` test checks for all the weird output names in the tests
-	   * In General after installing the package, look around the directory especially `src/` directories, they contain the source code which even though i don't completely understand are pretty fun to look around
+	 * `ncurses` test suit is pretty fun to play around with
+	 * Apparently `bash` has it's own malloc function, which is known to cause seg faults, so you need to compile it with the option saying you need it to use Glibc `malloc` function
+	 * The way `bison` test checks for all the weird output names in the tests
+	 * In General after installing the package, look around the directory especially `src/` directories, they contain the source code which even though i don't completely understand are pretty fun to look around
