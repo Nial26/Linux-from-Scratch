@@ -105,6 +105,9 @@
               Package         Build-Time (Apprx. in Mins)
               --------------------------------------------
               Glibc           130
+              Binutils        27
+              GCC             330 (Almost 6 hours if you count some other testing, this is the longest time-taker in the whole process)
+					              
               
               The Rest of them can usually be built within 5-10 minutes, and running the tests in this phase is considered critical.
 
@@ -112,3 +115,5 @@
 	 * Mount the partition to `$LFS`.
 	 * Make sure that all the Virtual kernel file systems are mounted
 	 * `chroot`  to `LFS` and then continue with the installation.
+
+*Note* : This is the longest phase and at times becomes extremely boring, it's okay to build this across multiple iterations, I took days in between building some packages.
